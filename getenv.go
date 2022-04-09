@@ -33,3 +33,17 @@ func GetString(key string, defaultVal string) string {
 	}
 	return str
 }
+
+// get .env with value bool
+func GetBool(key string,defaultVal bool) bool {
+	str := os.Getenv(key)	
+	if str == "" {
+		return defaultVal
+	}
+	val, err := strconv.ParseBool(str)
+	if err != nil {
+		return defaultValue
+	}
+
+	return val
+}
