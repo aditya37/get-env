@@ -42,7 +42,7 @@ func GetBool(key string,defaultVal bool) bool {
 	}
 	val, err := strconv.ParseBool(str)
 	if err != nil {
-		return defaultValue
+		return defaultVal
 	}
 
 	return val
