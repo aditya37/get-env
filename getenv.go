@@ -18,11 +18,11 @@ func GetInt(key string, defaultVal int) int {
 		return defaultVal
 	}
 	// convert string to int
-	val, err := strconv.ParseInt(str, 10, 10)
+	val, err := strconv.Atoi(str)
 	if err != nil {
 		return defaultVal
 	}
-	return int(val)
+	return val
 }
 
 // Get .env variable with value string
@@ -35,8 +35,8 @@ func GetString(key string, defaultVal string) string {
 }
 
 // get .env with value bool
-func GetBool(key string,defaultVal bool) bool {
-	str := os.Getenv(key)	
+func GetBool(key string, defaultVal bool) bool {
+	str := os.Getenv(key)
 	if str == "" {
 		return defaultVal
 	}
@@ -44,6 +44,5 @@ func GetBool(key string,defaultVal bool) bool {
 	if err != nil {
 		return defaultVal
 	}
-
 	return val
 }
